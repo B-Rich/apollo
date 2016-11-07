@@ -43,6 +43,11 @@ module Apollo
         response
       end
 
+      def self.destroy(id)
+        response = delete("/v1/classifiers/#{id}", basic_auth)
+        response.success?
+      end
+
       def self.all
         #curl -u "{username}":"{password}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
         response = get("/v1/classifiers", basic_auth)

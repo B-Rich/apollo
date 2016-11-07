@@ -14,8 +14,33 @@ module Apollo
         @url = attrs["url"]
         @name = attrs["name"]
         @language = attrs["language"]
+        @status = attrs["status"]
         @created = Date.parse(attrs["created"])
         @raw = attrs
+      end
+
+      def available?
+        status == "Available"
+      end
+
+      def unavailable?
+        !available?
+      end
+
+      def non_existent?
+        status == "Non Existent"
+      end
+
+      def training?
+        status == "Traning"
+      end
+
+      def self.find(id)
+        response = get("/v1/classifiers/#{id}", basic_auth)
+        parsed_response  = JSON.parse(response.body)
+
+        return new(parsed_response) if response.success?
+        response
       end
 
       def self.all

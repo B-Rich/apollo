@@ -1,6 +1,6 @@
 require "apollo/bot/version"
 require "active_support/dependencies"
-require "httparty"
+require "httmultiparty"
 
 module Apollo
   module Bot

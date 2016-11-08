@@ -21,3 +21,5 @@ module Apollo
     end
   end
 end
+
+require "apollo/bot/errors"

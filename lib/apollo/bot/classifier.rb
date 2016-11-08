@@ -37,17 +37,17 @@ module Apollo
         status == "Training"
       end
 
-      def self.classify(id, text)
-        classifier = find(id)
-        classifier.classify(text)
-      end
-
       def classify(text)
         response = self.class.get("/v1/classifiers/#{id}/classify", query: { text: text })
         parsed_response  = JSON.parse(response.body)
 
         return Apollo::Bot::Classification.new(parsed_response) if response.success?
-        response
+        self.class.raise_exception(response.code, response.body)
+      end
+
+      def self.classify(id, text)
+        classifier = find(id)
+        classifier.classify(text)
       end
 
       def self.find(id)
@@ -55,7 +55,7 @@ module Apollo
         parsed_response  = JSON.parse(response.body)
 
         return new(parsed_response) if response.success?
-        response
+        raise_exception(response.code, response.body)
       end
 
       def self.destroy(id)
@@ -64,22 +64,24 @@ module Apollo
       end
 
       def self.all
-        #curl -u "{username}":"{password}" "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers"
         response = get("/v1/classifiers")
         parsed_response  = JSON.parse(response.body)
 
-        parsed_response["classifiers"].map do |attrs|
-          new(attrs)
-        end
+        return parsed_response["classifiers"].map { |attrs| new(attrs) } if response.success?
+        raise_exception(response.code, response.body)
       end
 
       def self.create(attrs = {})
-        #Apollo::Bot::Classifier.create(training_data: File.open("file.csv"), training_metadata: { language: "en", name: "IcaliaBot"}.to_json)
         response = post("/v1/classifiers", body: attrs)
         parsed_response  = JSON.parse(response.body)
 
         return new(parsed_response) if response.success?
-        response
+        raise_exception(response.code, response.body)
+      end
+
+      def self.raise_exception(code, body)
+        raise Apollo::Bot::Error::ServerError.new(code, body) if code >= 500
+        raise Apollo::Bot::Error::ClientError.new(code, body) if code < 500
       end
     end
   end

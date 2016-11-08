@@ -5,6 +5,8 @@ require "httmultiparty"
 module Apollo
   module Bot
 
+    autoload :Classifier, "apollo/bot/classifier"
+
     # Username for authentication
     mattr_accessor :username
     @@username = nil
@@ -19,5 +21,3 @@ module Apollo
     end
   end
 end
-
-require "apollo/bot/classifier"

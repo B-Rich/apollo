@@ -10,9 +10,9 @@ module Apollo
     end
 
     # Any error with a 5xx HTTP status code
-    class ServerError < WatsonError; end
+    class ServerError < Error; end
 
     # Any error with a 4xx HTTP status code
-    class ClientError < WatsonError ; end
+    class ClientError < Error ; end
   end
 end

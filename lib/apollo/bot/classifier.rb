@@ -2,13 +2,7 @@ require "apollo/bot/classification"
 
 module Apollo
   module Bot
-    class Classifier
-      include HTTMultiParty
-      base_uri "https://gateway.watsonplatform.net/natural-language-classifier/api"
-      basic_auth Apollo::Bot.username, Apollo::Bot.password
-      headers 'Content-Type' => 'application/json'
-      debug_output $stdout
-
+    class Classifier < Olimpo::Base
       attr_reader :id, :url, :name, :language, :created, :status, :raw
 
       def initialize(attrs = {})
@@ -77,11 +71,6 @@ module Apollo
 
         return new(parsed_response) if response.success?
         raise_exception(response.code, response.body)
-      end
-
-      def self.raise_exception(code, body)
-        raise Apollo::Bot::Error::ServerError.new(code, body) if code >= 500
-        raise Apollo::Bot::Error::ClientError.new(code, body) if code < 500
       end
     end
   end

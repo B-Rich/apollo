@@ -1,4 +1,5 @@
 require "apollo/bot/classification"
+require "date"
 
 module Apollo
   module Bot

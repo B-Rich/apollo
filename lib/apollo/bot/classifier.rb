@@ -4,7 +4,7 @@ require "date"
 module Apollo
   module Bot
     class Classifier < Olimpo::Base
-      attr_reader :id, :url, :name, :language, :created, :status, :raw
+      attr_accessor :id, :url, :name, :language, :created, :status, :raw
 
       def initialize(attrs = {})
         @id = attrs["classifier_id"]

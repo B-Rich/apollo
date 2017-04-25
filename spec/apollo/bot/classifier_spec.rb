@@ -11,7 +11,7 @@ describe Apollo::Bot::Classifier do
                                                 "created"   => "December 09, 2011"})
   end
 
-  context "when status is 'Available" do
+  context "when status is 'Available'" do
     before { @classifier.status = "Available"}
     describe "#available?" do
       it "should return true" do
@@ -51,6 +51,31 @@ describe Apollo::Bot::Classifier do
     describe "#non_existent?" do
       it "should return false" do
         expect(@classifier.non_existent?).to be false
+      end
+    end
+    describe "#training?" do
+      it "should return false" do
+        expect(@classifier.training?).to be false
+      end
+    end
+  end
+
+  context "when status is 'Non Existent'" do
+    before { @classifier.status = "Non Existent"}
+
+    describe "#available?" do
+      it "should return false" do
+        expect(@classifier.available?).to be false
+      end
+    end
+    describe "#unavailable?" do
+      it "should return false" do
+        expect(@classifier.unavailable?).to be false
+      end
+    end
+    describe "#non_existent?" do
+      it "should return true" do
+        expect(@classifier.non_existent?).to be true
       end
     end
     describe "training?" do

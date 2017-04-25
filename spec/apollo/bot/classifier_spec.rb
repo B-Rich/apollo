@@ -35,28 +35,53 @@ describe Apollo::Bot::Classifier do
     end
   end
 
-context "when status is 'Unavailable" do
+  context "when status is 'Unavailable'" do
     before { @classifier.status = "Unavailable"}
+
     describe "#available?" do
       it "should return false" do
         expect(@classifier.available?).to be false
       end
     end
-    describe "#unavailable?"do
+    describe "#unavailable?" do
       it "should return true" do
         expect(@classifier.unavailable?).to be true
       end
     end
-    describe "#non_existent?"do
+    describe "#non_existent?" do
       it "should return false" do
-        expect(@classifier.unavailable?).to be false
+        expect(@classifier.non_existent?).to be false
       end
     end
-    describe "#non_existent?"do
+    describe "training?" do
       it "should return false" do
-        expect(@classifier.unavailable?).to be false
+        expect(@classifier.training?).to be false
       end
     end
   end
 
+  context "when status is 'Training'" do
+    before { @classifier.status = "Training" }
+
+    describe "#available?" do
+      it "should return false" do
+        expect(@classifier.available?).to be false
+      end
+    end
+    describe "#unavailable?" do
+      it "should return false" do
+        expect(@classifier.unavailable?).to be false
+      end
+    end
+    describe "#non_existent?" do
+      it "should return false" do
+        expect(@classifier.non_existent?).to be false
+      end
+    end
+    describe "training?" do
+      it "should return true" do
+        expect(@classifier.training?).to be true
+      end
+    end
+  end
 end

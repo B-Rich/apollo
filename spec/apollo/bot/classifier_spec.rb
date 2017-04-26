@@ -103,7 +103,7 @@ describe Apollo::Bot::Classifier do
         expect(@classifier.non_existent?).to be false
       end
     end
-    describe "training?" do
+    describe "#training?" do
       it "should return true" do
         expect(@classifier.training?).to be true
       end

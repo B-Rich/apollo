@@ -1,0 +1,35 @@
+engines:
+  shellcheck:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+    exclude_fingerprints:
+    - 4458bf04c9d496a788bcfa8cf9f3c8e4
+  reek:
+    enabled: true
+    exclude_fingerprints:
+    - 7af9cf292e1fc616b4f2dc5d2efb540a
+    - f4492c0dae8b66a539a4cfc1546fe4e8
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+exclude_paths:
+- bin/spring
+- config/
+- db/
+- spec/
+- vendor/

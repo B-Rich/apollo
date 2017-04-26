@@ -3,3 +3,8 @@ rvm:
   - 2.3.3
 script:
   - bundle exec rspec spec/
+addons:
+  code_climate:
+    repo_token: <token>
+after_success:
+  - bundle exec codeclimate-test-reporter

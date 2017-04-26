@@ -11,6 +11,7 @@ describe Apollo::Bot::Classifier do
                                                 "created"   => "December 09, 2011"})
   end
   describe "boolean methods" do
+
     context "when status is 'Available'" do
       before { @classifier.status = "Available"}
       describe "#available?" do

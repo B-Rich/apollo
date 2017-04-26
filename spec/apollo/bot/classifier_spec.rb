@@ -113,7 +113,6 @@ describe Apollo::Bot::Classifier do
   end
 
   describe "API Methods" do
-
     before :each do
       @stub_classification = Apollo::Bot::Classification.new({"classifier_id"=>"10D41B-nlc-1",
                                                               "text"=>"How hot will it be today?",
@@ -122,7 +121,6 @@ describe Apollo::Bot::Classifier do
                                                                            "confidence"=>0.9998201258549781},
                                                                            {"class_name"=>"conditions",
                                                                             "confidence"=>0.00017987414502176904}]})
-
       stub_response = ExampleResponse.new
       allow(Apollo::Bot::Classifier).to receive(:get).and_return(stub_response)
     end
@@ -166,6 +164,18 @@ describe Apollo::Bot::Classifier do
             "confidence": 0.00017987414502176904
           }
         ]
+      }.to_json
+    end
+
+    def classifier
+      {
+        "classifier_id": "10D41B-nlc-1",
+        "name": "My Classifier",
+        "language": "en",
+        "created": "2015-05-28T18:01:57.393Z",
+        "url": "https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1",
+        "status": "Available",
+        "status_description": "The classifier instance is now available and is ready to take classifier requests.",
       }.to_json
     end
   end

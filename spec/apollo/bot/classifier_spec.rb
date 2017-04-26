@@ -113,7 +113,6 @@ describe Apollo::Bot::Classifier do
   end
 
   describe "API Methods" do
-
     before :each do
       @stub_classification = Apollo::Bot::Classification.new({"classifier_id"=>"10D41B-nlc-1",
                                                               "text"=>"How hot will it be today?",

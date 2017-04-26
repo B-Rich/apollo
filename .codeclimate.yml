@@ -7,6 +7,10 @@ engines:
     enabled: true
     exclude_fingerprints:
     - 4458bf04c9d496a788bcfa8cf9f3c8e4
+  brakeman:
+    disabled: true
+  bundler-audit:
+    disabled: true
   reek:
     enabled: true
     exclude_fingerprints:

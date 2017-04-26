@@ -134,6 +134,15 @@ describe Apollo::Bot::Classifier do
         expect(classification.text).to be_eql(@stub_classification.text)
       end
     end
+
+    describe ".classify" do
+      it "should return expected Classification instance" do
+        classification = @classifier.classify("")
+        expect(classification).to be_a_kind_of(Apollo::Bot::Classification)
+        expect(classification.text).to be_eql(@stub_classification.text)
+      end
+
+    end
   end
 
   class ExampleResponse

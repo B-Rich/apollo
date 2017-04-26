@@ -30,6 +30,10 @@ In order for Apollo to work correctly, it is important that you set up an IBM Bl
 
 First add the following block to your application's configuration file:
 
+*Note: The username and password are not your Bluemix credentials. These
+credentials are specific to the Natural Language Classifier API and must
+be obtained from said section of Watson's Docs
+
 ```ruby
 Apollo::Bot.configure do |config|
 	config.username = SOME_USERNAME

@@ -63,7 +63,17 @@ Apollo::Bot::Classifier.create(training_data: SOME_DATA,
 
 ```
 
-[Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#create_classifier) for details 
+[Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#create_classifier) for details on how to use your own data in order to create a classifier.
+
+### Using an Existing Classifier
+
+In order to use an existing Classifier, simply use `Apollo::Bot::Classifier`'s find method:
+
+```ruby
+Apollo::Bot::Classifier.find(SOME_CLASSIFIER_ID)
+```
+
+All that is needed in order to execute the query is the classifier's unique id (such as "10D41B-nlc-1"). [Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#get_status) for more on getting information about an existing classifier.
 
 ## Development
 
@@ -79,5 +89,6 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
 
 

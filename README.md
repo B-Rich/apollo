@@ -26,8 +26,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In order for Apollo to work correctly, it is important that you set up an IBM Bluemix account of your own and that your trial period hasn't ended (or, for that matter, that you've registered for a paid account)
 
+First add the following block to your application's configuration file:
+
+```ruby
+Apollo::Bot.configure do |config|
+	config.username = SOME_USERNAME
+	config.password = SOME_PASSWORD
+	config.base_uri = "https://gateway.watsonplatform.net/natural-language-classifier/api"
+end
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

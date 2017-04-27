@@ -4,9 +4,10 @@
 [![Issue Count](https://codeclimate.com/github/IcaliaLabs/apollo/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
 # Apollo::Bot
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/apollo/bot`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Apollo is an open source ruby gem that acts as a wrapper for IBM Watson's [Natural
+Language Classifier
+service](https://www.ibm.com/watson/developercloud/nl-classifier.html)
+API.
 
 ## Installation
 

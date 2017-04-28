@@ -6,8 +6,7 @@
 
 Apollo is an open source ruby gem that acts as a wrapper for IBM Watson's [Natural
 Language Classifier
-service](https://www.ibm.com/watson/developercloud/nl-classifier.html)
-API.
+service API](https://www.ibm.com/watson/developercloud/nl-classifier.html).
 
 ## Installation
 

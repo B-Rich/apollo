@@ -57,7 +57,7 @@ be obtained from said section of Watson's Docs**
 In order to create a new classifier, simply use the `Apollo::Bot::Classifier` class' create method:
 
 ```ruby
-Apollo::Bot::Classifier.create(training_data: SOME_DATA, 
+Apollo::Bot::Classifier.create(training_data: SOME_DATA,
                                training_metadata: { language: SOME_LANGUAGE,
                                                     name: "Example Bot"})
 
@@ -75,7 +75,7 @@ In order to use an existing Classifier, simply use `Apollo::Bot::Classifier`'s f
 Apollo::Bot::Classifier.find(SOME_CLASSIFIER_ID)
 ```
 
-All that is needed in order to execute the query is the classifier's unique id (such as "10D41B-nlc-1"). 
+All that is needed in order to execute the query is the classifier's unique id (such as "10D41B-nlc-1").
 
 `Apollo::Bot::Classifier.` returns an instance of `Apollo::Bot::Classifier` which corresponds to an existing Natrual Language Classifier with the selected classfier id.
 
@@ -134,7 +134,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/apollo-bot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/IcaliaLabs/apollo-bot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

@@ -29,7 +29,7 @@ Or install it yourself as:
 
 ### Configuration
 
-In order for Apollo to work correctly, it is important that you set up an IBM Bluemix account of your own and that your trial period hasn't ended (or, for that matter, that you've registered for a paid account)
+In order for Apollo to work correctly, it is important that you [set up an IBM Bluemix account of your own](https://console.ng.bluemix.net/) and that your trial period hasn't ended (or, for that matter, that you've registered for a paid account)
 
 First require the `apollo-bot` in your file:
 
@@ -63,7 +63,11 @@ Apollo::Bot::Classifier.create(training_data: SOME_DATA,
 
 ```
 
-`Apollo::Bot::Classifier.create` returns an instance of `Apollo::Bot::Classifier` which corresponds to the newly created Natrual Language Classifier.
+`Apollo::Bot::Classifier.create` returns an instance of `Apollo::Bot::Classifier` which corresponds to the newly created Natural Language Classifier:
+
+```
+#<Apollo::Bot::Classifier:0x007f8dd907f120 @id="10D41B-nlc-1", @url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1", @name="My Classifier", @language="en", @status="Available", @created=#<Date: 2015-05-28 ((2457171j,0s,0n),+0s,2299161j)>, @raw={"classifier_id"=>"10D41B-nlc-1", "name"=>"My Classifier", "language"=>"en", "created"=>"2015-05-28T18:01:57.393Z", "url"=>"https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1", "status"=>"Available", "status_description"=>"The classifier instance is now available and is ready to take classifier requests."}>
+```
 
 [Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#create_classifier) for details on how to use your own data in order to create a classifier.
 

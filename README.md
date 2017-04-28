@@ -63,10 +63,10 @@ Apollo::Bot::Classifier.create(training_data: SOME_DATA,
 
 ```
 
-`Apollo::Bot::Classifier.create` returns an instance of `Apollo::Bot::Classifier` which corresponds to the newly created Natural Language Classifier:
+`Apollo::Bot::Classifier.create` returns an instance of `Apollo::Bot::Classifier` which corresponds to the newly created Natural Language Classifier. An example of said object can be seen below:
 
 ```
-#<Apollo::Bot::Classifier:0x007f8dd907f120 @id="10D41B-nlc-1", 
+#<Apollo::Bot::Classifier:0x007f8dd907f120 @id="10D41B-nlc-1",
 @url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1",
 @name="My Classifier", @language="en", @status="Available", @created=#<Date: 2015-05-28 ((2457171j,0s,0n),+0s,2299161j)>,
 @raw={"classifier_id"=>"10D41B-nlc-1", "name"=>"My Classifier", "language"=>"en", "created"=>"2015-05-28T18:01:57.393Z",
@@ -88,15 +88,6 @@ All that is needed in order to execute the query is the classifier's unique id (
 
 `Apollo::Bot::Classifier.` also returns an instance of `Apollo::Bot::Classifier` which corresponds to an existing Natrual Language Classifier with the selected classfier id.
 
-
-```
-#<Apollo::Bot::Classifier:0x007f8dd907f120 @id="10D41B-nlc-1", 
-@url="https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1",
-@name="My Classifier", @language="en", @status="Available", @created=#<Date: 2015-05-28 ((2457171j,0s,0n),+0s,2299161j)>,
-@raw={"classifier_id"=>"10D41B-nlc-1", "name"=>"My Classifier", "language"=>"en", "created"=>"2015-05-28T18:01:57.393Z",
-"url"=>"https://gateway.watsonplatform.net/natural-language-classifier/api/v1/classifiers/10D41B-nlc-1",
-"status"=>"Available", "status_description"=>"The classifier instance is now available and is ready to take classifier requests."}>
-```
 
 [Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#get_status) for more on getting information about an existing classifier.
 

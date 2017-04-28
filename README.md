@@ -63,9 +63,11 @@ Apollo::Bot::Classifier.create(training_data: SOME_DATA,
 
 ```
 
+`Apollo::Bot::Classifier.create` returns an instance of `Apollo::Bot::Classifier` which corresponds to the newly created Natrual Language Classifier.
+
 [Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#create_classifier) for details on how to use your own data in order to create a classifier.
 
-### Using an Existing Classifier
+### Finding an Existing Classifier
 
 In order to use an existing Classifier, simply use `Apollo::Bot::Classifier`'s find method:
 
@@ -73,7 +75,56 @@ In order to use an existing Classifier, simply use `Apollo::Bot::Classifier`'s f
 Apollo::Bot::Classifier.find(SOME_CLASSIFIER_ID)
 ```
 
-All that is needed in order to execute the query is the classifier's unique id (such as "10D41B-nlc-1"). [Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#get_status) for more on getting information about an existing classifier.
+All that is needed in order to execute the query is the classifier's unique id (such as "10D41B-nlc-1"). 
+
+`Apollo::Bot::Classifier.` returns an instance of `Apollo::Bot::Classifier` which corresponds to an existing Natrual Language Classifier with the selected classfier id.
+
+[Check Watson's API reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#get_status) for more on getting information about an existing classifier.
+
+### Getting all existing Classifiers
+
+In order to get all existing Natural Language Classifiers:
+
+```ruby
+Apollo::Bot::Classifier.all
+```
+This method returns an array containing a new instances of `Apollo::Bot::Classifier` corresponding to every single existing Natural Language Classifier available through Watson's API.
+
+### Deleting an Existing Classifier
+
+In order to permanently delete an existing Natural Language
+Classifier, simply use the `destroy` class method:
+
+```ruby
+Apollo::Bot::Classifier.destroy(SOME_CLASSIFIER_ID)
+```
+
+This method returns `true` if the Classifier was successfully destroyed through Watson's API and `false` otherwise.
+
+
+### Classifying Text
+
+The main focus of Watson's Natural Language Classifier is, of course, classifying text. Through `Apollo::Bot::Class`, there's two ways to classify text.
+
+The first and main way is to use the `classify` class method.
+
+```ruby
+Apollo::Bot::Classifier.classify(SOME_CLASSIFIER_ID, SOME_TEXT)
+```
+
+This method takes an existing Classifier's id as well as the input text to be classified and returns an instance of `Apollo::Bot::Classification`. The classes under which the given text will be classified will be accessible under the object's `top_class` and `classes` attributes.
+
+The second way of classifying text is through an existing instance of `Apollo::Bot::Classifier`. Simply call `classify` on the instance and send the text to be classified as a parameter.
+
+```ruby
+sample_classifier = Apollo::Bot::Classifier.find(SOME_CLASSIFIER_ID)
+sample_classifier.classify(SOME_TEXT)
+```
+
+This method is actually called by the previously mentioned `classify` class method, so the return value is the same. 
+
+For more information on how text is classified please consult [Watson's Natural Language Classifier API Reference](https://www.ibm.com/watson/developercloud/natural-language-classifier/api/v1/#classify).
+
 
 ## Development
 
@@ -89,6 +140,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+
 
 
 

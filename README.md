@@ -2,9 +2,11 @@
 [![Code Climate](https://codeclimate.com/github/IcaliaLabs/apollo/badges/gpa.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
 [![Test Coverage](https://codeclimate.com/github/IcaliaLabs/apollo/badges/coverage.svg)](https://codeclimate.com/github/IcaliaLabs/apollo/coverage)
 [![Issue Count](https://codeclimate.com/github/IcaliaLabs/apollo/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
+
 <div style="text-align:center">
   <img src="assets/logo.png" width="300">
-<div>
+</div>
+
 # Apollo::Bot
 
 Apollo is an open source ruby gem that acts as a wrapper for IBM Watson's [Natural

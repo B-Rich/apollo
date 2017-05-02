@@ -125,7 +125,11 @@ The first and main way is to use the `classify` class method.
 Apollo::Bot::Classifier.classify(SOME_CLASSIFIER_ID, SOME_TEXT)
 ```
 
-This method takes an existing Classifier's id as well as the input text to be classified and returns an instance of `Apollo::Bot::Classification`. The classes under which the given text will be classified will be accessible under the object's `top_class` and `classes` attributes.
+This method takes an existing Classifier's id as well as the input text to be classified and returns an instance of `Apollo::Bot::Classification`. The classes under which the given text will be classified will be accessible under the object's `top_class` and `classes` attributes. An example of `Apollo::Bot::Classification` object that is returned by this method can be seen below:
+
+```
+#<Apollo::Bot::Classification:0x007f907c14f0c8 @classifier_id="10D41B-nlc-1", @text="How hot will it be today?", @top_class="temperature", @classes=[#<Apollo::Bot::Classification::Class:0x007f907c14f078 @class_name="temperature", @confidence=0.9998201258549781>, #<Apollo::Bot::Classification::Class:0x007f907c14f050 @class_name="conditions", @confidence=0.00017987414502176904>]>
+```
 
 The second way of classifying text is through an existing instance of `Apollo::Bot::Classifier`. Simply call `classify` on the instance and send the text to be classified as a parameter.
 

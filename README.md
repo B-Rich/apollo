@@ -4,7 +4,7 @@
 [![Issue Count](https://codeclimate.com/github/IcaliaLabs/apollo/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
 
 <div style="text-align:center">
-  <img src="assets/logo.png" width="300">
+  <img src="assets/logo.png" width="980">
 </div>
 
 # Apollo::Bot

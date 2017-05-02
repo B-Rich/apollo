@@ -7,8 +7,6 @@
   <img src="assets/logo.png" width="980">
 </div>
 
-# Apollo::Bot
-
 Apollo is an open source ruby gem that acts as a wrapper for IBM Watson's [Natural
 Language Classifier
 service API](https://www.ibm.com/watson/developercloud/nl-classifier.html).

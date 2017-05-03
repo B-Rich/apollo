@@ -2,6 +2,7 @@
 [![Code Climate](https://codeclimate.com/github/IcaliaLabs/apollo/badges/gpa.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
 [![Test Coverage](https://codeclimate.com/github/IcaliaLabs/apollo/badges/coverage.svg)](https://codeclimate.com/github/IcaliaLabs/apollo/coverage)
 [![Issue Count](https://codeclimate.com/github/IcaliaLabs/apollo/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/apollo)
+![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)
 
 <div style="text-align:center">
   <img src="assets/logo.png" width="980">
